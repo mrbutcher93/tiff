@@ -235,6 +235,11 @@ export default class TIFFDecoder extends IOBuffer {
           dataToFill = decompressZlib(stripData);
           break;
         }
+        case 32946: {
+          // Zlib compression
+          dataToFill = decompressZlib(stripData);
+          break;
+        }
         case 2: // CCITT Group 3 1-Dimensional Modified Huffman run length encoding
           throw unsupported('Compression', 'CCITT Group 3');
         case 32773: // PackBits compression
